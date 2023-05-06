@@ -1,0 +1,66 @@
+:root {
+  --foreground-rgb: #f5f5fa;
+  --background-start-rgb: #181c3f;
+  --background-end-rgb: #181c3f;
+  --background-container-rgb: #252738;
+  --background-input: #0a0b1b;
+  --border-color: #b3b6e6;
+}
+
+body {
+  color: var(--foreground-rgb);
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--background-end-rgb)
+    )
+    var(--background-start-rgb);
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.input-container {
+  border-radius: 15px;
+  background-color: var(--background-container-rgb);
+  width: 95%;
+  height: 90px;  
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.input {
+  background-color: var(--background-input);
+  width: 95%;
+  height: 82%;  
+  padding: 10px 10px 10px 10px;  
+  border-radius: 5px;
+  font-size: 80%;
+  border-color: var(--border-color);
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+.course-list {
+  list-style: none;
+}
