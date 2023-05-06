@@ -64,3 +64,41 @@ body {
 .course-list {
   list-style: none;
 }
+
+/*modify sidenav*/
+.btn-close {
+  align-self: flex-start !important;
+}
+
+.offcanvas-body, .offcanvas-header {
+  background-color: #252738;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 23px;
+}
+
+.navbar {
+  z-index: 1046;
+}
+
+/*
+.cardnav {
+  width: 100%;
+}
+
+
+.card.cardnav {
+  background: transparent;
+  margin: 0;
+}
+
+.nav-link.nav-link-card {
+  color: var(--foreground-rgb);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+*/
+
+.offcanvas-body-card {
+  padding-top: 20px;
+}
