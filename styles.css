@@ -1,7 +1,7 @@
 :root {
   --foreground-rgb: #f5f5fa;
-  --background-start-rgb: #181c3f;
-  --background-end-rgb: #181c3f;
+  --background-start-rgb: #121F3D;
+  --background-end-rgb: #121F3D;
   --background-container-rgb: #252738;
   --background-input: #0a0b1b;
   --border-color: #b3b6e6;
@@ -28,25 +28,52 @@ body {
 @media (min-width: 768px) {
   .main {
     overflow: hidden;
-    height: 100%;
+    height: 100vh;
   }
 }
 
+.navbar {
+  z-index: 1046;
+  background-color: var(--background-start-rgb);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+  color:   rgb(18, 31, 61);
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+  color: var(--foreground-rgb);
+}
+
+.nav-link {
+  color: var(--border-color);
+}
+
+.navbar-brand {
+  color: var(--foreground-rgb);
+}
+
+.logo-container {
+  width: 30px;
+  height: 30px;  
+}
+
+/*Chat*/
 .chat-main {
   padding-top: 1rem;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   display: none;
 }
-
-.chat-main:hover {
-  overflow-y: auto;
-}
-
 
 @media (min-width: 768px) {
   .chat-main {
     display: block;
+  }
+  .chat-box {
+    height: 65vh;
+  }
+  
+  .chat-box:hover {  
+    overflow-y: auto;
   }
 }
 
@@ -70,11 +97,6 @@ body {
 
 .user-header {
   margin: 0.5rem;
-}
-
-.logo-container {
-  width: 50px;
-  height: 50px;  
 }
 
 .img-thumbnail-container {
@@ -107,33 +129,6 @@ body {
   height: 100%;
 }
 
-.video-main {
-  overflow: hidden;
-  height: 100vh;
-}
-
-.video-main:hover {
-  overflow-y: auto;
-}
-
-.video-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-}
-
-/* Then style the iframe to fit in the container div with full height and width */
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .input-container {
   border-radius: 15px;
   background-color: var(--background-container-rgb);
@@ -161,18 +156,41 @@ body {
   border-width: 0.5px;
 }
 
-.offcanvas-body, .offcanvas-header, .offcanvas-body {
-  background-color: var(--background-container-rgb);
-  padding-left: 0;
-  padding-right: 0;    
+/*Video*/
+.video-main {
+  overflow: hidden;
+  height: 100%;
 }
 
-.offcanvas-body {
-  padding: 0;
+.video-wrapper {
+  height: 90vh;
+  overflow: hidden;
+}
+
+.video-wrapper:hover {
+  overflow-y: auto;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .recursos-main {
   display: none;
+  padding: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -181,15 +199,26 @@ body {
   }
 }
 
-/*Mobile Tabs*/
-.tabs-main {
-  display: block;
+/*
+.recursos-container {
+  
+}
+*/
+
+/*Sidenav*/
+
+.offcanvas-body-card {
+  padding-top: 20px;
 }
 
-@media (min-width: 768px) {
-  .tabs-main {
-    display: none;
-  }
+.offcanvas-body, .offcanvas-header, .offcanvas-body {
+  background-color: var(--background-container-rgb);
+  padding-left: 0;
+  padding-right: 0;    
+}
+
+.offcanvas-body {
+  padding: 0;
 }
 
 .marker-main {
@@ -201,13 +230,21 @@ body {
     display: block;
   }
 }
+
 .marker-list {
   background-color: var(--background-container-rgb);
   /*max-width: 42px;*/
 }
 
-.navbar {
-  z-index: 1046;
+/*Mobile Tabs*/
+.tabs-main {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .tabs-main {
+    display: none;
+  }
 }
 
 /*
@@ -227,11 +264,6 @@ body {
   padding-bottom: 0;
 }
 */
-
-.offcanvas-body-card {
-  padding-top: 20px;
-}
-
 
 /*Scroll bar*/
 ::-webkit-scrollbar {
