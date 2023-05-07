@@ -5,6 +5,7 @@
   --background-container-rgb: #252738;
   --background-input: #0a0b1b;
   --border-color: #b3b6e6;
+  --foreactive-color: #4285f4;
 }
 
 body {
@@ -49,6 +50,23 @@ body {
 
 .navbar-brand {
   color: var(--foreground-rgb);
+}
+
+.navbar-toggler {
+  color: var(--foreground-rgb);
+}
+
+.navbar-toggler-icon {
+  color: var(--foreground-rgb);
+}
+
+.badge {
+  background-color: var(--background-container-rgb);
+}
+
+.badge.active {
+  background-color: var(--border-color);
+  color: var(--background-input);
 }
 
 .logo-container {
@@ -163,12 +181,17 @@ body {
 }
 
 .video-wrapper {
-  height: 90vh;
-  overflow: hidden;
+  height: 90vh;  
+  overflow-y: auto;
 }
 
-.video-wrapper:hover {
-  overflow-y: auto;
+@media (min-width: 768px) {
+  .video-wrapper {
+    overflow: hidden;
+  }
+  .video-wrapper:hover {
+    overflow-y: auto;
+  }
 }
 
 .video-container {
@@ -199,19 +222,14 @@ body {
   }
 }
 
-/*
-.recursos-container {
-  
-}
-*/
-
 /*Sidenav*/
 
 .offcanvas-body-card {
   padding-top: 20px;
+  padding-left: 1rem;
 }
 
-.offcanvas-body, .offcanvas-header, .offcanvas-body {
+.offcanvas-body, .offcanvas-header {
   background-color: var(--background-container-rgb);
   padding-left: 0;
   padding-right: 0;    
@@ -233,8 +251,87 @@ body {
 
 .marker-list {
   background-color: var(--background-container-rgb);
-  /*max-width: 42px;*/
 }
+
+/* Stepper */
+.body-stepper {
+  padding-top: 1.6rem;
+  padding-left: 1rem;
+  /*max-width: 3rem;*/
+}
+
+.step {
+  position: relative;
+  min-height: 1em;
+  color: var(--border-color);
+}
+.step + .step {
+  margin-top: 1.5em
+}
+.step > div:first-child {
+  position: static;
+  height: 0;
+}
+.step > div:not(:first-child) {
+  margin-left: 1.5em;
+  padding-left: 1em;
+}
+.step.step-active {
+  color: var(--foreactive-color);
+}
+.step.step-active .circle {
+  background-color: var(--foreactive-color);
+}
+
+.step.step-active .circle:after {
+  background-color: var(--foreactive-color);;
+}
+
+/* Circle */
+.circle {
+  background: var(--foreground-rgb);
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  border-radius: 100%;
+  color: var(--background-container-rgb);
+  text-align: center;
+  box-shadow: 0 0 0 3px var(--background-container-rgb);
+  /*wtf*/
+  z-index: 1048;
+}
+
+/* Vertical Line */
+.circle::after {
+  content: ' ';
+  position: absolute;
+  display: block;
+  top: 1px;
+  right: 50%;
+  bottom: 1px;
+  left: 50%;
+  height: 100%;
+  width: 3px;
+  transform: scale(1, 2);
+  transform-origin: 50% -100%;
+  background-color: var(--border-color);  
+  /*wtf*/
+  z-index: 1047;
+}
+.step:last-child .circle:after {
+  display: none
+}
+
+/* Stepper Titles */
+.title {
+  line-height: 1.5em;
+  font-weight: bold;
+}
+.caption {
+  font-size: 0.8em;
+}
+
 
 /*Mobile Tabs*/
 .tabs-main {
@@ -246,24 +343,6 @@ body {
     display: none;
   }
 }
-
-/*
-.cardnav {
-  width: 100%;
-}
-
-
-.card.cardnav {
-  background: transparent;
-  margin: 0;
-}
-
-.nav-link.nav-link-card {
-  color: var(--foreground-rgb);
-  padding-top: 0;
-  padding-bottom: 0;
-}
-*/
 
 /*Scroll bar*/
 ::-webkit-scrollbar {
