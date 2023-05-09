@@ -23,33 +23,60 @@
             <span><i class="bi bi-menu-button-wide"></i></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">            
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Cursos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Planes</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Comunidad
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Eventos</a></li>
-                  <li><a class="dropdown-item" href="#">Blog</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Live</a></li>
+            <div class="w-100">              
+              <div class="d-flex justify-content-between">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Explorar
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Evento1</a></li>
+                      <li><a class="dropdown-item" href="#">Evento2</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Evento3</a></li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>            
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+                <form class="d-flex" role="search">
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="search" aria-label="Search" class="form-control me-2" placeholder="¿Que deseas aprender?">  
+                  </div>
+                </form>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Cursos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Comunidad
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Eventos</a></li>
+                      <li><a class="dropdown-item" href="#">Blog</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Live</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Lanzamientos</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Planes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contáctanos</a>
+                  </li>
+                </ul> 
+              </div>
+            </div>
+            
+                                   
           </div>
+          <button type="button" class="ms-3 btn btn-outline-warning">Empresas</button>
+          <button type="button" class="ms-3 btn btn-success">Iniciar sesion</button>
         </div>
       </nav>
     </header>
@@ -58,7 +85,7 @@
       <div class="d-flex">
         <div class="marker-main">
           <div class="marker-list">
-            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvas" role="button" aria-controls="offcanvas">
+            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvas" role="button" aria-controls="offcanvas" onclick="myFunction()">
               <i class="bi bi-chevron-compact-right"></i>
             </a>          
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
@@ -66,7 +93,7 @@
                 <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>              
               </div>
               <div class="offcanvas-body">
-                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvas" role="button" aria-controls="offcanvas">
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvas" role="button" aria-controls="offcanvas" onclick="myFunction()">
                   <i class="bi bi-chevron-compact-left"></i>
                 </a>          
                 <div class="offcanvas-body-card">                
@@ -141,10 +168,82 @@
                       <div class="title">Octava leccion</div>
                       <div class="caption">Descripcion</div>
                     </div>
-                  </div>  
+                  </div>
                   <div class="step">
                     <div>
                       <div class="circle">9</div>
+                    </div>
+                    <div>
+                      <div class="title">Novena leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">10</div>
+                    </div>
+                    <div>
+                      <div class="title">Decima leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">11</div>
+                    </div>
+                    <div>
+                      <div class="title">Onceava leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">12</div>
+                    </div>
+                    <div>
+                      <div class="title">Doceava leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">13</div>
+                    </div>
+                    <div>
+                      <div class="title">Treceava leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">14</div>
+                    </div>
+                    <div>
+                      <div class="title">Catorceava leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">15</div>
+                    </div>
+                    <div>
+                      <div class="title">Quinceava leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div>
+                      <div class="circle">16</div>
+                    </div>
+                    <div>
+                      <div class="title">Deciseisava leccion</div>
+                      <div class="caption">Descripcion</div>
+                    </div>
+                  </div>  
+                  <div class="step">
+                    <div>
+                      <div class="circle">17</div>
                     </div>
                     <div>
                       <div class="title">Final</div>
@@ -153,87 +252,161 @@
                 </div>
               </div>
             </div>
-            <div class="body-stepper">                
-              <div class="step">
-                <div>
-                  <div class="circle"><i class="bi bi-check"></i></div>
+            <div class="body-stepper">                              
+              <div id="stepper" class="stepper">
+                <div class="step">
+                  <div>
+                    <div class="circle"><i class="bi bi-check"></i></div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
                 </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
+                <div class="step step-active">
+                  <div>
+                    <div class="circle">2</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
                 </div>
-              </div>
-              <div class="step step-active">
-                <div>
-                  <div class="circle">2</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>
-              <div class="step">
-                <div>
-                  <div class="circle">3</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>                                    
-              <div class="step">
-                <div>
-                  <div class="circle">4</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>  
-              <div class="step">
-                <div>
-                  <div class="circle">5</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>  
-              <div class="step">
-                <div>
-                  <div class="circle">6</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>  
-              <div class="step">
-                <div>
-                  <div class="circle">7</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>  
-              <div class="step">
-                <div>
-                  <div class="circle">8</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>
-                  <div class="caption">&nbsp;</div>
-                </div>
-              </div>  
-              <div class="step">
-                <div>
-                  <div class="circle">9</div>
-                </div>
-                <div>
-                  <div class="title">&nbsp;</div>                  
-                </div>
-              </div>                
+                <div class="step">
+                  <div>
+                    <div class="circle">3</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>                                    
+                <div class="step">
+                  <div>
+                    <div class="circle">4</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">5</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">6</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">7</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">8</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">9</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">10</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">11</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">12</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">13</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">14</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">15</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">16</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>
+                    <div class="caption">&nbsp;</div>
+                  </div>
+                </div>  
+                <div class="step">
+                  <div>
+                    <div class="circle">17</div>
+                  </div>
+                  <div>
+                    <div class="title">&nbsp;</div>                  
+                  </div>
+                </div>                
+              </div>                            
             </div>
           </div>
         </div>  
@@ -258,13 +431,19 @@
                 <div class="recursos-main">
                   <ul class="nav nav-tabs" id="myTabRh" role="tablist">
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="res-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="res-tab-pane" aria-selected="true">Recursos</button>
+                      <button class="nav-link active" id="res-tab" data-bs-toggle="tab" data-bs-target="#res-tab-pane" type="button" role="tab" aria-controls="res-tab-pane" aria-selected="true">Recursos</button>
+                    </li>                
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="res1-tab" data-bs-toggle="tab" data-bs-target="#res1-tab-pane" type="button" role="tab" aria-controls="res1-tab-pane" aria-selected="true">Tab1</button>
+                    </li>                
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="res2-tab" data-bs-toggle="tab" data-bs-target="#res2-tab-pane" type="button" role="tab" aria-controls="res2-tab-pane" aria-selected="true">Tab2</button>
                     </li>                
                   </ul>
                   <div class="tab-content" id="myTabContentRh">
                     <div class="tab-pane fade show active" id="res-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                       <div class="recursos-container">
-                        <div class="p-3 border-bottom">
+                        <div class="seccion p-3">
                           <h4 class="mb-3">Archivos de la clase</h4>
                           <div class="d-flex flex-column">
                             <a href="" class="d-flex justify-content-between">
@@ -276,7 +455,7 @@
                             </a>                      
                           </div>
                         </div>                  
-                        <div class="p-3 border-bottom">
+                        <div class="seccion p-3">
                           <h4 class="mb-3">Lecturas recomendadas</h4>
                           <div class="d-flex flex-column">
                             <a href="" class="d-flex justify-content-between">
@@ -303,7 +482,9 @@
                           </div>
                         </div>                  
                       </div>                    
-                    </div>                
+                    </div>
+                    <div class="tab-pane fade" id="res1-tab-pane" role="tabpanel" aria-labelledby="res1-tab" tabindex="1">...</div>                
+                    <div class="tab-pane fade" id="res2-tab-pane" role="tabpanel" aria-labelledby="res2-tab" tabindex="2">.....</div>
                   </div>
                 </div>
                 <!--mobile tabs-->
@@ -398,10 +579,82 @@
                                 <div class="title">Octava leccion</div>
                                 <div class="caption">Descripcion</div>
                               </div>
-                            </div>  
+                            </div>
                             <div class="step">
                               <div>
                                 <div class="circle">9</div>
+                              </div>
+                              <div>
+                                <div class="title">Novena leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">10</div>
+                              </div>
+                              <div>
+                                <div class="title">Decima leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">11</div>
+                              </div>
+                              <div>
+                                <div class="title">Onceava leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">12</div>
+                              </div>
+                              <div>
+                                <div class="title">Doceava leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">13</div>
+                              </div>
+                              <div>
+                                <div class="title">Treceava leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">14</div>
+                              </div>
+                              <div>
+                                <div class="title">Catorceava leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">15</div>
+                              </div>
+                              <div>
+                                <div class="title">Quinceava leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>
+                            <div class="step">
+                              <div>
+                                <div class="circle">16</div>
+                              </div>
+                              <div>
+                                <div class="title">Deciseisava leccion</div>
+                                <div class="caption">Descripcion</div>
+                              </div>
+                            </div>    
+                            <div class="step">
+                              <div>
+                                <div class="circle">17</div>
                               </div>
                               <div>
                                 <div class="title">Final</div>
@@ -848,5 +1101,18 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("stepper");          
+          if (x.style.display) {
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+          } else {
+            x.style.display = "none";
+          }          
+        }</script>
   </body>
 </html>
