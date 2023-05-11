@@ -35,6 +35,7 @@ body {
   }
 }
 
+/************************ESTILOS PARA MENU Y BARRA DE NAVEGACION*******************/
 .navbar {
   z-index: 1046;
   background-color: var(--background-start-rgb);
@@ -127,6 +128,25 @@ body {
   }
 }
 
+.logo-container {
+  width: 30px;
+  height: 30px;  
+}
+
+/*Search control*/
+.form-control {
+  background-color: var(--background-input);
+  font-size: 90%;
+  color: var(--foreground-rgb);
+  border-color: var(--border-color);
+}
+.input-group-text {
+  background: transparent;
+  color: var(--foreground-rgb);
+}
+/************************FINAL - ESTILOS PARA MENU Y BARRA DE NAVEGACION*******************/
+
+/************************ESTILOS PARA LA SECCION DERECHA: CHAT*******************/
 .badge {
   background-color: var(--background-container-rgb);
 }
@@ -136,12 +156,7 @@ body {
   color: var(--background-input);
 }
 
-.logo-container {
-  width: 30px;
-  height: 30px;  
-}
 
-/*Chat*/
 .chat-main {
   padding-top: 1rem;
   overflow: hidden;
@@ -214,18 +229,6 @@ body {
   height: 100%;
 }
 
-/*Search control*/
-.form-control {
-  background-color: var(--background-input);
-  font-size: 90%;
-  color: var(--foreground-rgb);
-  border-color: var(--border-color);
-}
-.input-group-text {
-  background: transparent;
-  color: var(--foreground-rgb);
-}
-
 /*Message input*/
 .input-container {
   border-radius: 15px;
@@ -254,7 +257,9 @@ body {
   border-width: 0.5px;
   color: var(--foreground-rgb);
 }
+/************************FINAL ESTILOS PARA LA SECCION DERECHA: CHAT*******************/
 
+/************************ESTILOS PARA LA SECCION CENTRAL: VIDEOS*******************/
 /*Video*/
 .video-main {
   overflow: hidden;
@@ -268,7 +273,7 @@ body {
 
 @media (min-width: 768px) {
   .video-wrapper {
-    overflow: hidden;
+    overflow: hidden;     
   }
   .video-wrapper:hover {
     overflow-y: auto;
@@ -309,8 +314,10 @@ body {
   }
 }
 
-/*Sidenav*/
+/************************FINAL ESTILOS PARA LA SECCION CENTRAL: VIDEOS*******************/
 
+/************************ESTILOS PARA LA SECCION IZQUIERDA: STEPPER*******************/
+/*Sidenav*/
 .offcanvas-body-card {
   padding-top: 20px;
   padding-left: 1rem;
@@ -437,7 +444,9 @@ body {
   font-size: 0.8em;
 }
 
+/************************FINAL ESTILOS PARA LA SECCION IZQUIERDA: STEPPER*******************/
 
+/************************ESTILOS ESPECIALES PARA FUNCIONAMIENTO MOVIL*******************/
 /*Mobile Tabs*/
 .tabs-main {
   display: block;
@@ -448,6 +457,8 @@ body {
     display: none;
   }
 }
+
+/************************ESTILOS ESPECIALES PARA FUNCIONAMIENTO MOVIL*******************/
 
 /*Scroll bar*/
 ::-webkit-scrollbar {
