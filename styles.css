@@ -54,6 +54,10 @@ body {
   color: var(--border-color);
 }
 
+.nav-link:focus {
+  color: var(--foreground-rgb);
+}
+
 .navbar-brand {
   color: var(--foreground-rgb);
 }
@@ -95,6 +99,23 @@ body {
   }
 }
 
+.button-toggled {
+  width: 100%;
+}
+
+.button-row {
+  display: none;  
+}
+
+@media (min-width: 768px) {
+  .button-row {
+    display: flex;  
+  }
+  .button-toggled {
+    display: none;
+  }
+}
+
 .badge {
   background-color: var(--background-container-rgb);
 }
@@ -122,7 +143,7 @@ body {
     display: block;
   }
   .chat-box {
-    height: 65vh;
+    height: 60vh;
   }
   
   .chat-box:hover {  
@@ -220,6 +241,7 @@ body {
   border-color: var(--border-color);
   border-style: solid;
   border-width: 0.5px;
+  color: var(--foreground-rgb);
 }
 
 /*Video*/
@@ -287,10 +309,11 @@ body {
   background-color: var(--background-container-rgb);
   padding-left: 0;
   padding-right: 0;    
+  padding-bottom: 0.6rem;
 }
 
 .offcanvas-body {
-  padding: 0;
+  padding-top: 0;
 }
 
 .marker-main {
@@ -313,7 +336,11 @@ body {
   padding-left: 0.5rem;
   max-width: 2.5rem;
   height: 85vh;  
-  overflow-y: auto;
+  overflow-y: auto;  
+}
+
+.stepper {
+  list-style: none;
 }
 
 .step {
@@ -321,13 +348,15 @@ body {
   min-height: 1em;
   color: var(--border-color);
   cursor: pointer;
+  /*transition: filter 300ms;*/
 }
 
 .step:hover {
   color: #637a9d;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 5px;
+  /*box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;*/
+  /*border-radius: 5px;*/
   /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;*/
+  /*filter: brightness(1.2);*/
 }
 
 .step + .step {
