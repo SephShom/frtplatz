@@ -93,6 +93,17 @@ body {
   color: var(--foreground-rgb);
 }
 
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active:hover {
+  filter: brightness(1.2);
+  color: var(--foreactive-color);
+  background-color: transparent;
+  border-color: var(--foreactive-color);
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+}
+
 @media (min-width: 992px) {
   .navbar-nav.me-auto {
     margin-right: unset!important;
