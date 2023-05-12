@@ -498,6 +498,9 @@ body {
   background-color: #a8bbbf;
 }
 
+.body-stepper {
+  scrollbar-width: none;
+}
 .body-stepper::-webkit-scrollbar {
   width: 15px;
   border-radius: 10px;
