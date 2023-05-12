@@ -499,6 +499,8 @@ body {
 }
 
 .body-stepper {
+  overflow: auto;
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .body-stepper::-webkit-scrollbar {

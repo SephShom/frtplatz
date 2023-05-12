@@ -112,16 +112,16 @@
                       <div class="caption">Descripcion</div>
                     </div>
                   </div>
-                  <div class="step step-active">
+                  <div id="stepps2" onclick="stepFunction(event)" class="step step-active">
                     <div>
                       <div class="circle">2</div>
                     </div>
-                    <div>
+                    <div >
                       <div class="title">Segunda leccion</div>
                       <div class="caption">Descripcion</div>
                     </div>
                   </div>
-                  <div class="step">
+                  <div id="stepps3" onclick="stepFunction(event)" class="step">
                     <div>
                       <div class="circle">3</div>
                     </div>
@@ -261,16 +261,16 @@
             <!--STEPPER: Seccion siempre visible-->
             <div class="body-stepper">                              
               <div id="stepper" class="stepper">
-                <div class="step">
+                <div class="step" >
                   <div>
-                    <div class="circle"><i class="bi bi-check"></i></div>
+                    <div class="circle"><i id="step1" class="bi bi-check" onclick="stepFunction(event)"></i></div>
                   </div>
                   <div class="step-text">
                     <div class="title">&nbsp;</div>
                     <div class="caption">&nbsp;</div>
                   </div>
                 </div>
-                <div class="step step-active">
+                <div id="step2" class="step step-active">
                   <div>
                     <div class="circle">2</div>
                   </div>
@@ -279,7 +279,7 @@
                     <div class="caption">&nbsp;</div>
                   </div>
                 </div>
-                <div class="step">
+                <div id="step3" class="step">
                   <div>
                     <div class="circle">3</div>
                   </div>
@@ -520,7 +520,7 @@
                     <div class="tab-pane fade show active" id="mcursos-tab-pane" role="tabpanel" aria-labelledby="mcursos-tab" tabindex="0">
                       <div>
                         <div class="marker-list">                        
-                          <div class="offcanvas-body-card">                
+                          <div id="mobile-stepper" class="offcanvas-body-card">                
                             <div class="step">
                               <div>
                                 <div class="circle"><i class="bi bi-check"></i></div>
@@ -530,7 +530,7 @@
                                 <div class="caption">Descripcion</div>
                               </div>
                             </div>
-                            <div class="step step-active">
+                            <div id="mstepps2" onclick="stepFunction(event)" class="step step-active">
                               <div>
                                 <div class="circle">2</div>
                               </div>
@@ -539,7 +539,7 @@
                                 <div class="caption">Descripcion</div>
                               </div>
                             </div>
-                            <div class="step">
+                            <div id="mstepps3" onclick="stepFunction(event)" class="step">
                               <div>
                                 <div class="circle">3</div>
                               </div>
@@ -1119,52 +1119,60 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>    
     
     <script>
-      /*Script que cambia el estado del stepper al hacerle click en alguno de sus elementos*/
-      /*Script para la barra fija izquierda*/
-      const lista = document.getElementById("stepper");
-      const elementos = lista.querySelectorAll(".step");
-      const iframe = document.getElementById("videoFrame");
-      var bnd = false;
-      elementos.forEach(function (elemento) {
-        elemento.addEventListener("click", function () {
-          elementos.forEach(function (otroElemento) {
+      function stepFunction(event) {
+        const lista1 = document.getElementById("side-stepper");
+        const lista2 = document.getElementById("stepper");
+        const lista3 = document.getElementById("mobile-stepper");
+        const elementos1 = lista1.querySelectorAll(".step");
+        const elementos2 = lista2.querySelectorAll(".step");
+        const elementos3 = lista3.querySelectorAll(".step");
+        const iframe = document.getElementById("videoFrame");        
+        elementos1.forEach(function (otroElemento) {
             otroElemento.classList.remove("step-active");
           });
-          elemento.classList.add("step-active");
-          if (bnd) {
-            iframe.src = "./assets/videos/video1.mp4";            
-          } else {
-            iframe.src = "./assets/videos/video2.mp4";            
+        elementos2.forEach(function (otroElemento) {
+          otroElemento.classList.remove("step-active");
+        });
+        elementos3.forEach(function (otroElemento) {
+          otroElemento.classList.remove("step-active");
+        });
+        let parentNode = event.target;        
+        while (parentNode) {
+          if (parentNode.id) {
+            switch (parentNode.id) {
+              case "stepps2":
+                iframe.src = "./assets/videos/video1.mp4";
+                parentNode.classList.add("step-active");
+                document.getElementById("step2").classList.add("step-active");                
+                document.getElementById("mstepps2").classList.add("step-active");                
+                break;
+              case "stepps3":
+                iframe.src = "./assets/videos/video2.mp4";
+                parentNode.classList.add("step-active");
+                document.getElementById("step3").classList.add("step-active");                
+                document.getElementById("mstepps3").classList.add("step-active");                
+                break;
+                case "mstepps2":
+                iframe.src = "./assets/videos/video1.mp4";
+                parentNode.classList.add("step-active");
+                document.getElementById("step2").classList.add("step-active");                
+                document.getElementById("stepps2").classList.add("step-active");                
+                break;
+              case "mstepps3":
+                iframe.src = "./assets/videos/video2.mp4";
+                parentNode.classList.add("step-active");
+                document.getElementById("step3").classList.add("step-active");                
+                document.getElementById("stepps3").classList.add("step-active");                
+                break;
+              default:
+                break;
+            }
+            break;
           }
-          bnd = !bnd;
-        });
-      });
-    </script>
-
-  <script>
-    /*Script que cambia el estado del stepper al hacerle click en alguno de sus elementos*/
-    /*Script para la barra flotante o SIDEBAR*/
-    const lista1 = document.getElementById("side-stepper");
-    const elementos1 = lista1.querySelectorAll(".step");
-    const iframe1 = document.getElementById("videoFrame");
-    var bnd1 = false;
-    elementos1.forEach(function (elemento1) {
-      elemento1.addEventListener("click", function () {
-        elementos1.forEach(function (otroElemento1) {
-          otroElemento1.classList.remove("step-active");
-        });
-        elemento1.classList.add("step-active");
-        if (bnd1) {
-          iframe1.src = "./assets/videos/video1.mp4";            
-        } else {
-          iframe1.src = "./assets/videos/video2.mp4";            
+          parentNode = parentNode.parentNode;
         }
-        bnd1 = !bnd1;
-      });
-    });
-  </script>
-
-
+      }
+    </script>
     <script>
       /*Script para el STEPPER*/      
       document.addEventListener("click", function(event) {
