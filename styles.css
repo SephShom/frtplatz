@@ -452,11 +452,25 @@ body {
   display: block;
 }
 
+.menu-explore {
+  display: none;
+}
+.search {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .tabs-main {
     display: none;
   }
+  .menu-explore {
+    display: block;
+  }
+  .search {
+    display: block;
+  }
 }
+
 
 /************************ESTILOS ESPECIALES PARA FUNCIONAMIENTO MOVIL*******************/
 
