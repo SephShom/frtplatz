@@ -103,7 +103,7 @@
                   <i class="bi bi-chevron-compact-left"></i>
                 </a>          
                 <div id="side-stepper" class="offcanvas-body-card">                
-                  <div class="step">
+                  <div class="step step-active">
                     <div>
                       <div class="circle"><i class="bi bi-check"></i></div>
                     </div>
@@ -112,7 +112,7 @@
                       <div class="caption">Descripcion</div>
                     </div>
                   </div>
-                  <div id="stepps2" onclick="stepFunction(event)" class="step step-active">
+                  <div id="stepps2" onclick="stepFunction(event)" class="step">
                     <div>
                       <div class="circle">2</div>
                     </div>
@@ -261,7 +261,7 @@
             <!--STEPPER: Seccion siempre visible-->
             <div class="body-stepper">                              
               <div id="stepper" class="stepper">
-                <div class="step" >
+                <div class="step step-active">
                   <div>
                     <div class="circle"><i id="step1" class="bi bi-check" onclick="stepFunction(event)"></i></div>
                   </div>
@@ -270,7 +270,7 @@
                     <div class="caption">&nbsp;</div>
                   </div>
                 </div>
-                <div id="step2" class="step step-active">
+                <div id="step2" class="step">
                   <div>
                     <div class="circle">2</div>
                   </div>
@@ -423,7 +423,7 @@
             <div class="video-main">
               <div class="video-wrapper">
                 <div class="video-container">
-                  <iframe id="videoFrame" class="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                  <iframe id="videoFrame" class="responsive-iframe" src="./assets/videos/video1.mp4"></iframe>
                 </div>
                 <div class="d-flex justify-content-start align-items-center m-3">
                   <div class="logo-container">
@@ -521,7 +521,7 @@
                       <div>
                         <div class="marker-list">                        
                           <div id="mobile-stepper" class="offcanvas-body-card">                
-                            <div class="step">
+                            <div class="step step-active">
                               <div>
                                 <div class="circle"><i class="bi bi-check"></i></div>
                               </div>
@@ -530,7 +530,7 @@
                                 <div class="caption">Descripcion</div>
                               </div>
                             </div>
-                            <div id="mstepps2" onclick="stepFunction(event)" class="step step-active">
+                            <div id="mstepps2" onclick="stepFunction(event)" class="step">
                               <div>
                                 <div class="circle">2</div>
                               </div>
@@ -1141,25 +1141,25 @@
           if (parentNode.id) {
             switch (parentNode.id) {
               case "stepps2":
-                iframe.src = "./assets/videos/video1.mp4";
+                iframe.src = "./assets/videos/video2.mp4";
                 parentNode.classList.add("step-active");
                 document.getElementById("step2").classList.add("step-active");                
                 document.getElementById("mstepps2").classList.add("step-active");                
                 break;
               case "stepps3":
-                iframe.src = "./assets/videos/video2.mp4";
+                iframe.src = "./assets/videos/video3.mp4";
                 parentNode.classList.add("step-active");
                 document.getElementById("step3").classList.add("step-active");                
                 document.getElementById("mstepps3").classList.add("step-active");                
                 break;
                 case "mstepps2":
-                iframe.src = "./assets/videos/video1.mp4";
+                iframe.src = "./assets/videos/video2.mp4";
                 parentNode.classList.add("step-active");
                 document.getElementById("step2").classList.add("step-active");                
                 document.getElementById("stepps2").classList.add("step-active");                
                 break;
               case "mstepps3":
-                iframe.src = "./assets/videos/video2.mp4";
+                iframe.src = "./assets/videos/video3.mp4";
                 parentNode.classList.add("step-active");
                 document.getElementById("step3").classList.add("step-active");                
                 document.getElementById("stepps3").classList.add("step-active");                
