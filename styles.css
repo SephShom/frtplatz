@@ -578,3 +578,20 @@ body {
   display: flex;
   justify-content: center;  
 }
+
+
+.circle > span.complete {
+  display: none;
+}
+
+.circle > i.complete {
+  display: inline;
+}
+
+.circle > span.uncomplete {
+  display: inline;
+}
+
+.circle > i.uncomplete {
+  display: none;
+}
