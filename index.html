@@ -103,7 +103,7 @@
                   <i class="bi bi-chevron-compact-left"></i>
                 </a>          
                 <div id="side-stepper" class="offcanvas-body-card">                
-                  <div class="step step-active">
+                  <div id="stepps1" onclick="stepFunction(event)" class="step step-active">
                     <div>
                       <div class="circle"><i class="bi bi-check"></i></div>
                     </div>
@@ -261,9 +261,9 @@
             <!--STEPPER: Seccion siempre visible-->
             <div class="body-stepper">                              
               <div id="stepper" class="stepper">
-                <div class="step step-active">
+                <div id="step1" class="step step-active complete">
                   <div>
-                    <div class="circle"><i id="step1" class="bi bi-check" onclick="stepFunction(event)"></i></div>
+                    <div class="circle"><i id="step1" class="bi bi-check"></i></div>
                   </div>
                   <div class="step-text">
                     <div class="title">&nbsp;</div>
@@ -434,7 +434,459 @@
                   <div class="ps-3">
                     Titulo del curso Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </div>               
-                </div>            
+                </div>
+                <div class="m-2">
+                  <button type="button" class="btn btn-outline-warning p-2" onclick="enableTest()">Hacer examen</button>                  
+                </div>                
+                <div id="step1-question-list">                                 
+                  <div id="question1" class="question show">
+                    <p>Pregunta 1</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>  
+                  </div>
+                  <div id="question2" class="question">
+                    <p>Pregunta 2</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault21">
+                        <label class="form-check-label" for="flexRadioDefault21">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault22" checked>
+                        <label class="form-check-label" for="flexRadioDefault22">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault23">
+                        <label class="form-check-label" for="flexRadioDefault23">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question3" class="question">
+                    <p>Pregunta 3</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault31">
+                        <label class="form-check-label" for="flexRadioDefault31">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault32" checked>
+                        <label class="form-check-label" for="flexRadioDefault32">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question4" class="question">
+                    <p>Pregunta 4</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault41">
+                        <label class="form-check-label" for="flexRadioDefault41">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault42" checked>
+                        <label class="form-check-label" for="flexRadioDefault42">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question5" class="question">
+                    <p>Pregunta 5</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault51">
+                        <label class="form-check-label" for="flexRadioDefault51">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault52" checked>
+                        <label class="form-check-label" for="flexRadioDefault52">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault53">
+                        <label class="form-check-label" for="flexRadioDefault53">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question6" class="question">
+                    <p>Pregunta 6</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault61">
+                        <label class="form-check-label" for="flexRadioDefault61">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault62" checked>
+                        <label class="form-check-label" for="flexRadioDefault62">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question7" class="question">
+                    <p>Pregunta 7</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault71">
+                        <label class="form-check-label" for="flexRadioDefault71">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault72" checked>
+                        <label class="form-check-label" for="flexRadioDefault72">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault73">
+                        <label class="form-check-label" for="flexRadioDefault73">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question8" class="question">
+                    <p>Evaluación</p>
+                    <div class="evaluation">                      
+                      <button type="button" class="btn btn-success" onclick="eval()">Evaluacion</button>      
+                    </div>                    
+                  </div>
+                  <div class="button-quest">
+                    <button type="button" class="btn btn-outline-primary m-2" onclick="prev()">Previa</button>         
+                    <button type="button" class="btn btn-outline-primary m-2" onclick="next()">Siguiente</button>
+                  </div>                  
+                </div>
+                <div id="step2-question-list">                  
+                  <div id="question1" class="question show">
+                    <p>Pregunta 1</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>  
+                  </div>
+                  <div id="question2" class="question">
+                    <p>Pregunta 2</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault21">
+                        <label class="form-check-label" for="flexRadioDefault21">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault22" checked>
+                        <label class="form-check-label" for="flexRadioDefault22">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault23">
+                        <label class="form-check-label" for="flexRadioDefault23">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question3" class="question">
+                    <p>Pregunta 3</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault31">
+                        <label class="form-check-label" for="flexRadioDefault31">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault32" checked>
+                        <label class="form-check-label" for="flexRadioDefault32">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question4" class="question">
+                    <p>Pregunta 4</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault41">
+                        <label class="form-check-label" for="flexRadioDefault41">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault42" checked>
+                        <label class="form-check-label" for="flexRadioDefault42">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question5" class="question">
+                    <p>Pregunta 5</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault51">
+                        <label class="form-check-label" for="flexRadioDefault51">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault52" checked>
+                        <label class="form-check-label" for="flexRadioDefault52">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault53">
+                        <label class="form-check-label" for="flexRadioDefault53">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question6" class="question">
+                    <p>Pregunta 6</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault61">
+                        <label class="form-check-label" for="flexRadioDefault61">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault62" checked>
+                        <label class="form-check-label" for="flexRadioDefault62">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question7" class="question">
+                    <p>Pregunta 7</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault71">
+                        <label class="form-check-label" for="flexRadioDefault71">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault72" checked>
+                        <label class="form-check-label" for="flexRadioDefault72">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault73">
+                        <label class="form-check-label" for="flexRadioDefault73">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question8" class="question">
+                    <p>Evaluación</p>
+                    <div class="evaluation">                      
+                      <button type="button" class="btn btn-success" onclick="eval()">Evaluacion</button>      
+                    </div>                    
+                  </div>
+                  <div class="button-quest">
+                    <button type="button" class="btn btn-outline-primary m-2" onclick="prev()">Previa</button>         
+                    <button type="button" class="btn btn-outline-primary m-2" onclick="next()">Siguiente</button>
+                  </div>                  
+                </div>
+                <div id="step3-question-list">                  
+                  <div id="question1" class="question show">
+                    <p>Pregunta 1</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>  
+                  </div>
+                  <div id="question2" class="question">
+                    <p>Pregunta 2</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault21">
+                        <label class="form-check-label" for="flexRadioDefault21">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault22" checked>
+                        <label class="form-check-label" for="flexRadioDefault22">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault23">
+                        <label class="form-check-label" for="flexRadioDefault23">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question3" class="question">
+                    <p>Pregunta 3</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault31">
+                        <label class="form-check-label" for="flexRadioDefault31">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault32" checked>
+                        <label class="form-check-label" for="flexRadioDefault32">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question4" class="question">
+                    <p>Pregunta 4</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault41">
+                        <label class="form-check-label" for="flexRadioDefault41">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault4" id="flexRadioDefault42" checked>
+                        <label class="form-check-label" for="flexRadioDefault42">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question5" class="question">
+                    <p>Pregunta 5</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault51">
+                        <label class="form-check-label" for="flexRadioDefault51">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault52" checked>
+                        <label class="form-check-label" for="flexRadioDefault52">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault5" id="flexRadioDefault53">
+                        <label class="form-check-label" for="flexRadioDefault53">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question6" class="question">
+                    <p>Pregunta 6</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault61">
+                        <label class="form-check-label" for="flexRadioDefault61">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault6" id="flexRadioDefault62" checked>
+                        <label class="form-check-label" for="flexRadioDefault62">
+                          Default checked radio
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question7" class="question">
+                    <p>Pregunta 7</p>
+                    <div class="question-options">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault71">
+                        <label class="form-check-label" for="flexRadioDefault71">
+                          Default radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault72" checked>
+                        <label class="form-check-label" for="flexRadioDefault72">
+                          Default checked radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault7" id="flexRadioDefault73">
+                        <label class="form-check-label" for="flexRadioDefault73">
+                          Default radio
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                  <div id="question8" class="question">
+                    <p>Evaluación</p>
+                    <div class="evaluation">                      
+                      <button type="button" class="btn btn-success" onclick="eval()">Evaluacion</button>          
+                    </div>                    
+                  </div>
+                  <div class="button-quest">
+                    <button type="button" class="btn btn-outline-primary m-2" onclick="prev()">Previa</button>         
+                    <button type="button" class="btn btn-outline-primary m-2" onclick="next()">Siguiente</button>
+                  </div>                  
+                </div>
+                
+                
                 <div class="recursos-main">
                   <ul class="nav nav-tabs" id="myTabRh" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -521,7 +973,7 @@
                       <div>
                         <div class="marker-list">                        
                           <div id="mobile-stepper" class="offcanvas-body-card">                
-                            <div class="step step-active">
+                            <div id="mstepps1" onclick="stepFunction(event)" class="step step-active">
                               <div>
                                 <div class="circle"><i class="bi bi-check"></i></div>
                               </div>
@@ -1115,11 +1567,326 @@
       </div>
       
     </main>
+    <footer>
+      <div id="liveAlertPlaceholder" class="message"></div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>    
     
     <script>
-      function stepFunction(event) {
+      const steps = [
+        {
+          "name": "step1",
+          "sname": "stepps1",
+          "mname": "mstepps1",
+          "criteria": 80,
+          "status": "complete",
+          "questions": [
+              {
+                  "name": "question1",
+                  "values": {
+                    "goodanswer": 1,
+                    "answered": 0
+                  },                
+              },              
+              {
+                  "name": "question2",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question3",
+                  "values": {
+                    "goodanswer": 1,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question4",
+                  "values": {
+                    "goodanswer": 2,
+                    "answered": 0
+                  },                
+              },{
+                  "name": "question5",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              },{
+                  "name": "question6",
+                  "values": {
+                    "goodanswer": 2,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question7",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              }
+          ]
+        },
+        {
+          "name": "step2", 
+          "sname": "stepps2",
+          "mname": "mstepps2",       
+          "criteria": 80,
+          "status": "enabled",
+          "questions": [
+              {
+                  "name": "question1",
+                  "values": {
+                    "goodanswer": 1,
+                    "answered": 0
+                  },                
+              },              
+              {
+                  "name": "question2",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question3",
+                  "values": {
+                    "goodanswer": 1,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question4",
+                  "values": {
+                    "goodanswer": 2,
+                    "answered": 0
+                  },                
+              },{
+                  "name": "question5",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              },{
+                  "name": "question6",
+                  "values": {
+                    "goodanswer": 2,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question7",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              }
+          ]
+        },
+        {
+          "name": "step3", 
+          "sname": "stepps3",
+          "mname": "mstepps3",       
+          "criteria": 80,
+          "status": "disabled",
+          "questions": [
+              {
+                  "name": "question1",
+                  "values": {
+                    "goodanswer": 1,
+                    "answered": 0
+                  },                
+              },              
+              {
+                  "name": "question2",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question3",
+                  "values": {
+                    "goodanswer": 1,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question4",
+                  "values": {
+                    "goodanswer": 2,
+                    "answered": 0
+                  },                
+              },{
+                  "name": "question5",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              },{
+                  "name": "question6",
+                  "values": {
+                    "goodanswer": 2,
+                    "answered": 0
+                  },                
+              },
+              {
+                  "name": "question7",
+                  "values": {
+                    "goodanswer": 3,
+                    "answered": 0
+                  },                
+              }
+          ]
+        }        
+      ];
+      
+      localStorage.setItem("answers", JSON.stringify(steps));
+    </script>    
+    <script>
+      function enableTest() {
+        const currentListStep = document.getElementById("stepper");
+        const steps = currentListStep.querySelectorAll(".step");
+        const stepsArray = Array.from(steps);
+        const currentStep = stepsArray.find(item => item.classList.contains("step-active"));
+
+        const answers = JSON.parse(localStorage.getItem("answers"));          
+        const answered = answers.find(item => item.name === currentStep.id);
+        if (answered.status === "complete") {
+          return;
+        }
+        const node = document.getElementById(currentStep.id + "-question-list");
+        node.classList.add("display");
+      }
+      function next() {
+        /*Se obtiene el current step*/
+        const currentListStep = document.getElementById("stepper");
+        const steps = currentListStep.querySelectorAll(".step");
+        const stepsArray = Array.from(steps);
+        const currentStep = stepsArray.find(item => item.classList.contains("step-active"));
+        
+        /*Se utiliza el current step para buscar la lista correcta de preguntas*/
+        const lista = document.getElementById(currentStep.id + "-question-list");
+        const elementos = lista.querySelectorAll(".question");
+        const items = Array.from(elementos);
+        const indexItem = items.findIndex(item => item.classList.contains("show"));
+        if (indexItem !== -1 && indexItem < items.length-1) {
+          /*sise lo encuentra y ademas no es el ultimo nodo...*/
+          
+          // currentStep.id = step2 items[indexItem].id = question1
+          // update answer1 with index + 1 of inputs.findIndex(input => input.checked === true)
+          /*los inputs del radio button*/
+          const inputs = Array.from(items[indexItem].querySelectorAll('input[type="radio"]'));          
+          /*se obtiene la respuesta*/
+          const answer = inputs.findIndex(input => input.checked === true) + 1;
+
+          /*actualizacion del array de respuestas*/
+          const answers = JSON.parse(localStorage.getItem("answers"));          
+          const answered = (answers.find(item => item.name === currentStep.id)).questions.find(item => item.name === items[indexItem].id);
+          answered.values.answered = answer;          
+          localStorage.setItem("answers", JSON.stringify(answers));
+
+          /*el paso de pregunta*/
+          items[indexItem].classList.remove("show");
+          items[indexItem + 1].classList.add("show");
+        }
+      }
+      function prev() {
+        /*Se obtiene el current step*/
+        const currentListStep = document.getElementById("stepper");
+        const steps = currentListStep.querySelectorAll(".step");
+        const stepsArray = Array.from(steps);
+        const currentStep = stepsArray.find(item => item.classList.contains("step-active"));
+        
+        /*Se utiliza el current step para buscar la lista correcta de preguntas*/
+        const lista = document.getElementById(currentStep.id + "-question-list");
+        const elementos = lista.querySelectorAll(".question");
+        const items = Array.from(elementos);        
+        const indexItem = items.findIndex((item) => item.classList.contains("show"));
+        if (indexItem !== -1 && indexItem > 0) {
+          items[indexItem].classList.remove("show");
+          items[indexItem - 1].classList.add("show");
+        }
+      }
+      function eval() {       
+        /*Se obtiene el current step*/        
+        const currentListStep = document.getElementById("stepper");
+        const steps = currentListStep.querySelectorAll(".step");
+        const stepsArray = Array.from(steps);
+        const currentStep = stepsArray.find(item => item.classList.contains("step-active"));
+
+        /*se obtiene la lista de respuestas del current step*/
+        const answers = JSON.parse(localStorage.getItem("answers"));
+        const index = answers.findIndex(item => item.name === currentStep.id);
+        const step = answers[index];
+        /*se obtienen el criterio de aprobacion en %*/
+        const criteria = step.criteria;
+        
+        let total = 0;
+        step.questions.forEach(item => {
+          if (item.values.goodanswer === item.values.answered) {            
+            total = total + 1;
+          }
+        });        
+        
+        const resultado = Math.round((total/step.questions.length)*100);
+        if (criteria <= resultado) {          
+          //step.classList.add("complete");
+          step.status = "complete";
+          // si el numero de index dice que no es el ultimo se asigna enabled al siguiente
+          if (index < answers.length - 1) {
+            const stepNext = answers[index + 1];
+            stepNext.status = "enabled";
+            localStorage.setItem("answers", JSON.stringify(answers));
+          }
+          const mensaje = 'Felicidades su resultado fue de' + resultado + '%, se habilitó la siguiente lección';
+          alert(mensaje, 'success');
+        } else {
+          const mensaje = 'El mínimo requerido es ' + criteria + '% su resultado fue de ' + resultado + '%';
+          alert(mensaje, 'danger');
+        }
+
+        function alert(mensaje, tipo) {
+          const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+          const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+              `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+              `   <div>${message}</div>`,
+              '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+              '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+          }
+          appendAlert(mensaje, tipo)
+        }        
+      }
+    </script>
+    <script>
+      /*SCRIPT PARA EL COMPORTAMIENTO DEL STEPPER*/
+      function stepFunction(event) {                
+        
+        const answers = JSON.parse(localStorage.getItem("answers"));                  
+            
+        let parentNode = event.target;        
+        while (parentNode) {
+          if (parentNode.id) {
+            break;
+          }
+          parentNode = parentNode.parentNode;
+        }
+        const node = answers.find(item => (item.name === parentNode.id) || (item.sname === parentNode.id) || (item.mname === parentNode.id));        
+
+        if (node.status === "disabled") {
+          console.log("disabled");
+          return;
+        }
+
         const lista1 = document.getElementById("side-stepper");
         const lista2 = document.getElementById("stepper");
         const lista3 = document.getElementById("mobile-stepper");
@@ -1131,46 +1898,58 @@
             otroElemento.classList.remove("step-active");
           });
         elementos2.forEach(function (otroElemento) {
+          const node = document.getElementById(otroElemento.id + "-question-list");
+          if (node) {
+            node.classList.remove("display");
+          }          
           otroElemento.classList.remove("step-active");
         });
         elementos3.forEach(function (otroElemento) {
           otroElemento.classList.remove("step-active");
         });
-        let parentNode = event.target;        
-        while (parentNode) {
-          if (parentNode.id) {
-            switch (parentNode.id) {
-              case "stepps2":
-                iframe.src = "./assets/videos/video2.mp4";
-                parentNode.classList.add("step-active");
-                document.getElementById("step2").classList.add("step-active");                
-                document.getElementById("mstepps2").classList.add("step-active");                
-                break;
-              case "stepps3":
-                iframe.src = "./assets/videos/video3.mp4";
-                parentNode.classList.add("step-active");
-                document.getElementById("step3").classList.add("step-active");                
-                document.getElementById("mstepps3").classList.add("step-active");                
-                break;
-                case "mstepps2":
-                iframe.src = "./assets/videos/video2.mp4";
-                parentNode.classList.add("step-active");
-                document.getElementById("step2").classList.add("step-active");                
-                document.getElementById("stepps2").classList.add("step-active");                
-                break;
-              case "mstepps3":
-                iframe.src = "./assets/videos/video3.mp4";
-                parentNode.classList.add("step-active");
-                document.getElementById("step3").classList.add("step-active");                
-                document.getElementById("stepps3").classList.add("step-active");                
-                break;
-              default:
-                break;
-            }
+
+        switch (parentNode.id) {
+          case "stepps1":
+            iframe.src = "./assets/videos/video1.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("step1").classList.add("step-active");                
+            document.getElementById("mstepps1").classList.add("step-active");                
             break;
-          }
-          parentNode = parentNode.parentNode;
+          case "stepps2":
+            iframe.src = "./assets/videos/video2.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("step2").classList.add("step-active");                
+            document.getElementById("mstepps2").classList.add("step-active");                
+            break;
+          case "stepps3":
+            iframe.src = "./assets/videos/video3.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("step3").classList.add("step-active");                
+            document.getElementById("mstepps3").classList.add("step-active");                
+            break;
+          case "mstepps1":
+            iframe.src = "./assets/videos/video1.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("step1").classList.add("step-active");                
+            document.getElementById("stepps1").classList.add("step-active");                
+            break;
+          case "mstepps2":
+            iframe.src = "./assets/videos/video2.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("step2").classList.add("step-active");                
+            document.getElementById("stepps2").classList.add("step-active");                
+            break;
+          case "mstepps3":
+            iframe.src = "./assets/videos/video3.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("step3").classList.add("step-active");                
+            document.getElementById("stepps3").classList.add("step-active");                
+            break;
+          default:
+            break;
         }
+            
+        
       }
     </script>
     <script>

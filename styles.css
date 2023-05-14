@@ -526,3 +526,55 @@ body {
 .body-stepper::-webkit-scrollbar-thumb:hover {
   background-color: #0f181a;
 }
+
+/*Quests*/
+.question:not(.show) {
+  display: none;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;  
+  padding: 1rem;
+}
+
+.question .question-options {
+  display: flex;
+  justify-content: space-around;
+} 
+
+.question .evaluation {
+  display: flex;
+  flex-direction: column;
+}
+
+#step1-question-list {
+  display: none;
+}
+#step1-question-list.display {
+  display: block;
+}
+#step2-question-list {
+  display: none;
+}
+#step2-question-list.display {
+  display: block;
+}
+#step3-question-list {
+  display: none;
+}
+#step3-question-list.display {
+  display: block;
+}
+
+.message {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-quest {
+  display: flex;
+  justify-content: center;  
+}
