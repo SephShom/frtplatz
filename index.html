@@ -261,7 +261,7 @@
             <!--STEPPER: Seccion siempre visible-->
             <div class="body-stepper">                              
               <div id="stepper" class="stepper">
-                <div id="step1" class="step step-active complete">
+                <div id="step1" onclick="stepFunction(event)" class="step step-active complete">
                   <div>
                     <div class="circle"><span class="uncomplete">1</span><i class="bi bi-check uncomplete"></i></div>
                   </div>
@@ -270,7 +270,7 @@
                     <div class="caption">&nbsp;</div>
                   </div>
                 </div>
-                <div id="step2" class="step">
+                <div id="step2" onclick="stepFunction(event)" class="step">
                   <div>
                     <div class="circle"><span class="uncomplete">2</span><i class="bi bi-check uncomplete"></i></div>
                   </div>
@@ -279,7 +279,7 @@
                     <div class="caption">&nbsp;</div>
                   </div>
                 </div>
-                <div id="step3" class="step">
+                <div id="step3" onclick="stepFunction(event)" class="step">
                   <div>
                     <div class="circle"><span class="uncomplete">3</span><i class="bi bi-check uncomplete"></i></div>
                   </div>
@@ -1903,9 +1903,10 @@
         
         const answers = JSON.parse(localStorage.getItem("answers"));                  
             
-        let parentNode = event.target;        
+        let parentNode = event.target; 
+        
         while (parentNode) {
-          if (parentNode.id) {
+          if (parentNode.id) {            
             break;
           }
           parentNode = parentNode.parentNode;
@@ -1939,6 +1940,24 @@
         });
 
         switch (parentNode.id) {
+          case "step1":
+            iframe.src = "./assets/videos/video1.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("stepps1").classList.add("step-active");                
+            document.getElementById("mstepps1").classList.add("step-active");                
+            break;
+          case "step2":
+            iframe.src = "./assets/videos/video2.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("stepps2").classList.add("step-active");                
+            document.getElementById("mstepps2").classList.add("step-active");                
+            break;
+          case "step3":
+            iframe.src = "./assets/videos/video3.mp4";
+            parentNode.classList.add("step-active");
+            document.getElementById("stepps3").classList.add("step-active");                
+            document.getElementById("mstepps3").classList.add("step-active");                
+            break;
           case "stepps1":
             iframe.src = "./assets/videos/video1.mp4";
             parentNode.classList.add("step-active");
