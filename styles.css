@@ -98,12 +98,18 @@ body {
   filter: brightness(1.2);
   color: var(--foreactive-color);
   background-color: transparent;
-  border-color: var(--foreactive-color);
+  border-color: transparent;
+  border-bottom-color: var(--foreactive-color);
   border-top-style: none;
   border-right-style: none;
   border-bottom-style: solid;
   border-left-style: none;
 }
+
+.nav-link {
+  transition: none;
+}
+
 
 @media (min-width: 992px) {
   .navbar-nav.me-auto {
