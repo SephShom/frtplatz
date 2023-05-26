@@ -1,0 +1,52 @@
+[
+        {
+          "id" : 1,
+          "userName": "Jesika",
+          "avatar": "./assets/images/avatar.jpg",
+          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi soluta eveniet error cumque laboriosam praesentium nostrum quibusdam a unde numquam ipsum nemo aut minus illum tenetur voluptate, maiores quam deleniti.",
+          "stars": 11,
+          "days": 20,
+          "type": "A",
+          "answers": 7
+        },
+        {
+          "id" : 2,
+          "userName": "Justin",
+          "avatar": "./assets/images/avatar2.jpg",
+          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi soluta eveniet error cumque laboriosam praesentium nostrum quibusdam a unde numquam ipsum nemo aut minus illum tenetur voluptate, maiores quam deleniti.",
+          "stars": 50,
+          "days": 12,
+          "type": "A",
+          "answers": 0
+        },
+        {
+          "id" : 3,
+          "userName": "Jesika",
+          "avatar": "./assets/images/avatar.jpg",
+          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi soluta eveniet error cumque laboriosam praesentium nostrum quibusdam a unde numquam ipsum nemo aut minus illum tenetur voluptate, maiores quam deleniti.",
+          "stars": 50,
+          "days": 50,
+          "type": "P",
+          "answers": 7
+        },
+        {
+          "id" : 4,
+          "userName": "Justin",
+          "avatar": "./assets/images/avatar.jpg",
+          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi soluta eveniet error cumque laboriosam praesentium nostrum quibusdam a unde numquam ipsum nemo aut minus illum tenetur voluptate, maiores quam deleniti.",
+          "stars": 30,
+          "days": 180,
+          "type": "P",
+          "answers": 0
+        },
+        {
+          "id" : 5,
+          "userName": "Erika",
+          "avatar": "./assets/images/avatar1.jpg",
+          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi soluta eveniet error cumque laboriosam praesentium nostrum quibusdam a unde numquam ipsum nemo aut minus illum tenetur voluptate, maiores quam deleniti.",
+          "stars": 80,
+          "days": 180,
+          "type": "A",
+          "answers": 7
+        }
+      ]

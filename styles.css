@@ -155,6 +155,7 @@ body {
 /************************ESTILOS PARA LA SECCION DERECHA: CHAT*******************/
 .badge {
   background-color: var(--background-container-rgb);
+  cursor: pointer;
 }
 
 .badge.active {
@@ -262,6 +263,21 @@ body {
   border-style: solid;
   border-width: 0.5px;
   color: var(--foreground-rgb);
+}
+
+.bi.bi-heart-fill.hidden {
+  display: none;
+}
+.bi.bi-heart.hidden {
+  display: none;
+}
+
+.bi.bi-heart-fill {
+  cursor: pointer;
+}
+
+.bi.bi-heart {
+  cursor: pointer;
 }
 /************************FINAL ESTILOS PARA LA SECCION DERECHA: CHAT*******************/
 
@@ -554,23 +570,12 @@ body {
   flex-direction: column;
 }
 
-#step1-question-list {
-  display: none;
-}
-#step1-question-list.display {
+.step-question-list.display {
   display: block;
 }
-#step2-question-list {
+
+.step-question-list {
   display: none;
-}
-#step2-question-list.display {
-  display: block;
-}
-#step3-question-list {
-  display: none;
-}
-#step3-question-list.display {
-  display: block;
 }
 
 .message {

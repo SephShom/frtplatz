@@ -1,0 +1,10 @@
+[
+        {
+          "name": "Primer archivo",
+          "src": "./assets/docs/sample.pdf"
+        },
+        {
+          "name": "Segundo archivo",
+          "src": "./assets/docs/sample.pdf"
+        }
+      ]
