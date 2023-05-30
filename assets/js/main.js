@@ -103,11 +103,11 @@
 
     const iStar = document.createElement("i");
     iStar.className = "bi bi-heart";
-    iStar.setAttribute("onclick", "addVote(event)");
+    iStar.onclick = addVote;
 
     const iStarActive = document.createElement("i");
     iStarActive.className = "bi bi-heart-fill hidden";
-    iStarActive.setAttribute("onclick", "addVote(event)");;
+    iStarActive.onclick = addVote;
 
     const divStars = document.createElement("div");
     divStars.textContent = 0;
@@ -175,7 +175,9 @@
 
     const chats = Array.from(divAportes.children);
     chatMessagesOrdered.forEach(function (message) {
-      chatsOrdered.appendChild(chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true));
+      const clone = chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true);
+      clone.addEventListener("click", addVote);      
+      chatsOrdered.appendChild(clone);
     });
 
     divAportes.innerHTML = null;
@@ -200,10 +202,12 @@
     });
 
     const divAportes = document.getElementById(nodoId);
-    const chats = Array.from(divAportes.children);
-    console.log(chats);
+    const chats = Array.from(divAportes.children);    
     chatMessagesOrdered.forEach(function (message) {
-      chatsOrdered.appendChild(chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true));
+      //chatsOrdered.appendChild(chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true));
+      const clone = chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true);
+      clone.addEventListener("click", addVote);
+      chatsOrdered.appendChild(clone);
     });
 
     divAportes.innerHTML = null;
@@ -230,8 +234,10 @@
     const divAportes = document.getElementById(nodoId);
 
     const chats = Array.from(divAportes.children);
-    chatMessagesOrdered.forEach(function (message) {
-      chatsOrdered.appendChild(chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true));
+    chatMessagesOrdered.forEach(function (message) {      
+      const clone = chats.find(chat => chat.id === ('chat-' + message.id)).cloneNode(true);
+      clone.addEventListener("click", addVote);
+      chatsOrdered.appendChild(clone);
     });
 
     divAportes.innerHTML = null;
@@ -430,8 +436,7 @@
   /**/
   /*SCRIPT PARA EL COMPORTAMIENTO DEL STEPPER*/
   /*Asignacion del recurso para el iframe VIDEO*/
-  function stepFunction(event) {    
-    console.log("me ejecuto al asign");
+  function stepFunction(event) {        
     /*GET Reemplazar por httpRequest Get*/
     const answers = JSON.parse(localStorage.getItem("answers"));
 
