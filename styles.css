@@ -237,6 +237,11 @@ body {
 }
 
 /*Message input*/
+.button-chat {
+  width: 95%;  
+  display: none;
+  justify-content: center;
+}
 .input-container {
   border-radius: 15px;
   background-color: var(--background-container-rgb);
@@ -283,6 +288,12 @@ body {
 
 /************************ESTILOS PARA LA SECCION CENTRAL: VIDEOS*******************/
 /*Video*/
+@media screen and (min-width: 768px) {
+  .page {
+    margin-left: 1rem;
+  }  
+}
+
 .video-main {
   overflow: hidden;
   height: 100%;
@@ -323,6 +334,11 @@ body {
   right: 0;
   width: 100%;
   height: 100%;
+  display: none;
+}
+
+.responsive-iframe.show {
+  display: block;
 }
 
 .recursos-main {
@@ -371,15 +387,36 @@ body {
 }
 
 /* Stepper */
-.body-stepper {
-  padding-top: 1.6rem;
-  padding-left: 0.5rem;
-  max-width: 2.5rem;
-  height: 85vh;  
+.body-stepper {  
+  width: 2.5rem;
+  height: 100vh;  
+  top: 0px;
   overflow-y: auto;  
+  transition: all 0.5s ease;
+  position: fixed;
+  z-index: 99;
+  background-color: var(--background-container-rgb);
+}
+
+.body-stepper.open {
+  width: 20rem;    
+}
+.side-nav-btn {
+  margin-top: 3.5rem;
+  width: 2.5rem;
+  z-index: 100;
+}
+.bi.bi-chevron-compact-left {
+  pointer-events: none;
+}
+
+.bi.bi-chevron-compact-right {
+  pointer-events: none;
 }
 
 .stepper {
+  padding-top: 1.6rem;
+  padding-left: 0.5rem;
   list-style: none;
 }
 
@@ -388,7 +425,7 @@ body {
   min-height: 1em;
   color: var(--border-color);
   cursor: pointer;
-  /*transition: filter 300ms;*/
+  /*transition: filter 300ms;*/  
 }
 
 .step:hover {
@@ -458,12 +495,17 @@ body {
 }
 
 /* Stepper Titles */
-.title {
+.title {  
   line-height: 1.5em;
-  font-weight: bold;
+  font-weight: bold;    
+  max-height: 1.5rem;  
+  overflow: hidden;
 }
-.caption {
-  font-size: 0.8em;
+
+.caption {  
+  font-size: 0.8em;  
+  max-height: 1.2rem;    
+  overflow: hidden;
 }
 
 /************************FINAL ESTILOS PARA LA SECCION IZQUIERDA: STEPPER*******************/

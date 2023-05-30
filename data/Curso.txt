@@ -1,9 +1,6 @@
 [
         {
-	  "id": 1,
-          "name": "step1",
-          "sname": "stepps1",
-          "mname": "mstepps1",
+	        "id": 1,          
           "criteria": 80,
           "status": "enabled",
           "active": true,
@@ -147,10 +144,7 @@
           ]
         },
         {
-       	  "id": 2,
-          "name": "step2", 
-          "sname": "stepps2",
-          "mname": "mstepps2",       
+       	  "id": 2,          
           "criteria": 80,
           "status": "disabled",
           "active": false,
@@ -272,10 +266,7 @@
           ]
         },
         {
-	  "id": 3,
-          "name": "step3", 
-          "sname": "stepps3",
-          "mname": "mstepps3",       
+	        "id": 3,          
           "criteria": 80,
           "status": "disabled",
           "active": false,
