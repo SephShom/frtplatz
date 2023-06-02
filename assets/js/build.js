@@ -1,4 +1,4 @@
-fetch('../data/RecursosArchivos.txt')
+fetch('data/RecursosArchivos.txt')
   .then(response => response.text())
   .then(data => {
     // Convertir el contenido a JSON si es necesario        
@@ -49,7 +49,7 @@ fetch('../data/RecursosArchivos.txt')
     console.log('Error al leer el archivo:', error);
   });
 
-fetch('../data/RecursosLecturas.txt')
+fetch('data/RecursosLecturas.txt')
   .then(response => response.text())
   .then(data => {
     // Convertir el contenido a JSON si es necesario        
@@ -101,7 +101,7 @@ fetch('../data/RecursosLecturas.txt')
     console.log('Error al leer el archivo:', error);
   });
 
-fetch('../data/ChatMensajes.txt')
+fetch('data/ChatMensajes.txt')
   .then(response => response.text())
   .then(data => {
     // Convertir el contenido a JSON si es necesario        
@@ -213,7 +213,7 @@ fetch('../data/ChatMensajes.txt')
   });
 
 /**/
-fetch('../data/Curso.txt')
+fetch('data/Curso.txt')
   .then(response => response.text())
   .then(data => {
     // Convertir el contenido a JSON si es necesario        
@@ -226,8 +226,10 @@ fetch('../data/Curso.txt')
     const lessonList1 = document.getElementById("stepper");
     const lessonListM = document.getElementById("mobile-stepper");
     const videoFrames = document.getElementById("videoFrames");
+    const testButton = document.getElementById("enable-quiz");
 
-    steps.forEach((step, stepIndex) => {
+    steps.forEach((step, stepIndex) => {      
+      
       //STEPPER
       const divStep1 = document.createElement("div");
       divStep1.id = "step-" + step.id;
@@ -235,19 +237,19 @@ fetch('../data/Curso.txt')
       divStep1.className = "step" + (step.active ? " step-active" : "") + (step.status === 'disabled' ? " disabled" : "");
       divStep1.setAttribute("data-video", "videoFrame-" + step.id);
       divStep1.setAttribute("data-quiz", "step-" + step.id + "-question-list");
-      
+      divStep1.role = step.role;
 
       const divDivCircle1 = document.createElement("div");
 
       const circle1 = document.createElement("div");
-      circle1.setAttribute("class", "circle");
+      circle1.className = "circle";
 
       const circleSpan1 = document.createElement("span");
-      circleSpan1.setAttribute("class", "uncomplete");
+      circleSpan1.className= step.status === 'complete' ? "complete" : "uncomplete";
       circleSpan1.textContent = step.number;
 
       const circleIcon1 = document.createElement("i");
-      circleIcon1.setAttribute("class", "bi bi-check uncomplete");
+      circleIcon1.className = step.status === 'complete' ? "bi bi-check complete" : "bi bi-check uncomplete";
 
       circle1.appendChild(circleSpan1);
       circle1.appendChild(circleIcon1);
@@ -257,11 +259,11 @@ fetch('../data/Curso.txt')
       const divDivTitle1 = document.createElement("div");
 
       const title1 = document.createElement("div");
-      title1.setAttribute("class", "title");
+      title1.className = "title";
       title1.textContent = step.title;
 
       const caption1 = document.createElement("div");
-      caption1.setAttribute("class", "caption");
+      caption1.className = "caption";
       caption1.textContent = step.caption;
 
       divDivTitle1.appendChild(title1);
@@ -279,39 +281,10 @@ fetch('../data/Curso.txt')
       divStepM.className = "step" + (step.active ? " step-active" : "");
       divStepM.setAttribute("data-video", "videoFrame-" + step.id);
       divStepM.setAttribute("data-quiz", "step-" + step.id + "-question-list");
+      divStep1.role = step.role;
 
-      const divDivCircleM = document.createElement("div");
-
-      const circleM = document.createElement("div");
-      circleM.setAttribute("class", "circle");
-
-      const circleSpanM = document.createElement("span");
-      circleSpanM.setAttribute("class", "uncomplete");
-      circleSpanM.textContent = step.number;
-
-      const circleIconM = document.createElement("i");
-      circleIconM.setAttribute("class", "bi bi-check uncomplete");
-
-      circleM.appendChild(circleSpanM);
-      circleM.appendChild(circleIconM);
-
-      divDivCircleM.appendChild(circleM);
-
-      const divDivTitleM = document.createElement("div");
-
-      const titleM = document.createElement("div");
-      titleM.setAttribute("class", "title");
-      titleM.textContent = step.title;
-
-      const captionM = document.createElement("div");
-      captionM.setAttribute("class", "caption");
-      captionM.textContent = step.caption;
-
-      divDivTitleM.appendChild(titleM);
-      divDivTitleM.appendChild(captionM);
-
-      divStepM.appendChild(divDivCircleM);
-      divStepM.appendChild(divDivTitleM);
+      divStepM.appendChild(divDivCircle1.cloneNode(true));
+      divStepM.appendChild(divDivTitle1.cloneNode(true));
 
       lessonListM.appendChild(divStepM);
       /*QUIZ - Generación del cuestionario*/
@@ -406,6 +379,10 @@ fetch('../data/Curso.txt')
       videoFrames.appendChild(iframe);
     });
 
+    const isPresentacion = steps.findIndex(step => step.role === 'presentacion' && step.active === true);
+    if (isPresentacion !== -1) {
+      testButton.classList.add('hidden');
+    }
   })
   .catch(error => {
     console.log('Error al leer el archivo:', error);

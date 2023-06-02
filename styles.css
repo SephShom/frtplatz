@@ -620,6 +620,10 @@ body {
   display: none;
 }
 
+#enable-quiz.hidden {
+  display: none;
+}
+
 .message {
   position: fixed;
   bottom: 0;

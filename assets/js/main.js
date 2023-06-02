@@ -454,7 +454,14 @@
       console.log("disabled");
       return;
     }
-
+    const testButton = document.getElementById("enable-quiz");    
+    const isPresentacion = node.role === 'presentacion' && node.active === true;
+    if (isPresentacion) {
+      testButton.classList.add('hidden');
+    } else {
+      testButton.classList.remove('hidden');
+    }
+    
     //const nodeIds = parentNode.id.split('-');
     const iframes = document.getElementById("videoFrames");
     Array.from(iframes.children).forEach(item =>  {

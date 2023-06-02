@@ -1,13 +1,26 @@
 [
         {
+	        "id": 0,          
+          "criteria": 0,
+          "status": "complete",
+          "active": true,
+          "number": 0,
+          "title": "Primera lección",
+          "caption": "Description",
+          "src": "./assets/videos/video0.mp4",
+          "role": "presentacion",
+          "questions": []
+        },
+        {
 	        "id": 1,          
           "criteria": 80,
           "status": "enabled",
-          "active": true,
+          "active": false,
           "number": 1,
           "title": "Primera lección",
           "caption": "Description",
           "src": "./assets/videos/video1.mp4",
+          "role": "curso",
           "questions": [
               {
                   "name": "question1",
@@ -152,6 +165,7 @@
           "title": "Segunda lección",
           "caption": "Description",
           "src": "./assets/videos/video2.mp4",
+          "role": "curso",
           "questions": [
               {
                   "name": "question1",
@@ -277,6 +291,7 @@
           "title": "Tercera lección",
           "caption": "Description",
           "src": "./assets/videos/video3.mp4",
+          "role": "curso",
           "questions": [
               {
                   "name": "question1",
