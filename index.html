@@ -278,13 +278,69 @@
           <!--CHAT: Sección derecha que contienen las conversaciones y preguntas-->
           <div class="chat-main">
             <div class="input-container">
-              <textarea id="message-input" class="input" type="text"
-                placeholder="Escribe tu aporte o pregunta"></textarea>
+              <!--CHAT: Input para cada chat-->
+              <button id="message-button" class="input-button">
+                <div id="message-input" class="input">Escribe tu aporte o pregunta</div>              
+              </button>              
+              <!-- Editor de texto enriquecido -->
+              <div id="main-editor" class="main-editor">
+                <!-- Text editor header -->
+                <div class="text-editor-header">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn custom" data-element="bold">
+                      <i class="bi bi-type-bold"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="italic">
+                      <i class="bi bi-type-italic"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="underline">
+                      <i class="bi bi-type-underline"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="insertUnorderedList">
+                      <i class="bi bi-list-ol"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="insertOrderedList">
+                      <i class="bi bi-list-ul"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="justifyLeft">
+                      <i class="bi bi-justify-left"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="justifyCenter">
+                      <i class="bi bi-text-center"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="justifyRight">
+                      <i class="bi bi-justify-right"></i>
+                    </button>
+                    <button type="button" class="btn custom" data-element="justifyFull">
+                      <i class="bi bi-justify"></i>
+                    </button>
+                  </div>
+                  <button id="text-editor-close" type="button" class="btn-close btn-sm m-1" aria-label="Close"></button>
+                </div>
+                <!-- End of text editor header-->
+                <!-- Text editor content-->
+                <div id="text-editor-content" class="text-editor-content" contenteditable="true">
+
+                </div>
+                <!-- End of text editor content-->
+                <!--Text editor footer-->
+                <div id="text-editor-footer" class="text-editor-footer">
+                  <!-- Radiobuttons implementados de Bootstrap 5: Revisar la documentación de bootstrap para la asignacion de los ids y las clases-->
+                  <div class="form-check">                        
+                    <input class="form-check-input" type="radio" name="flexRadio1"  id="flexRadio1" checked>
+                    <label class="form-check-label" for="flexRadio1">Aportar</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadio1" id="flexRadio2">
+                    <label class="form-check-label" for="flexRadio2">Preguntar</label>
+                  </div>
+                  <button id="button-chat-editor" type="button" class="btn btn-outline-success btn-sm m-2">Enviar</button>
+                </div>                
+              </div>
             </div>
-            <div id="button-chat" class="button-chat">
-              <button type="button" class="btn btn-outline-success btn-sm m-2" data-target="aportes">Aportar</button>
-              <button type="button" class="btn btn-outline-success btn-sm m-2" data-target="preguntas">Preguntar</button>
-            </div>
+            <!--Text editor FIN-->            
+
+            <!--Tabs de Aportes y Preguntas-->
             <div class="mt-3">
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -300,6 +356,7 @@
                 <div class="tab-pane fade show active" id="chat-tab-pane" role="tabpanel" aria-labelledby="chat-tab"
                   tabindex="0">
                   <div class="d-flex p-3">
+                    <!--Botones de para ordenar los chats-->
                     <div class="small">Ordenar por:</div>&nbsp;&nbsp;&nbsp;
                     <div class="button-order" role="group" aria-label="Order by">
                       <span class="badge rounded-pill" data-target="aportes">Más votados</span>
@@ -314,6 +371,7 @@
                 </div>
                 <div class="tab-pane fade" id="chats-tab-pane" role="tabpanel" aria-labelledby="chats-tab" tabindex="1">
                   <div class="d-flex p-3">
+                    <!-- Botones para ordenar los chats -->
                     <div class="small">Ordenar por:</div>&nbsp;&nbsp;&nbsp;
                     <div class="button-order" role="group" aria-label="Order by">
                       <span class="badge rounded-pill" data-target="preguntas">Más votados</span>

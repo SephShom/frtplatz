@@ -2,35 +2,45 @@
   /*Operaciones: Funciones para la manipulación del DOM*/
   /********************************************************************************/
 
-  const messageInput = document.getElementById('message-input');    
-  const buttonContainer = document.getElementById('button-chat');
-  
-
-  messageInput.addEventListener('input', function() {
-    if (messageInput.value.trim().length > 2) {
-      buttonContainer.style.display = 'flex';
-    } else {
-      buttonContainer.style.display = 'none';
-    }
-  });
-
-  messageInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      messageInput.value = '';
-      buttonContainer.style.display = 'none';
-    }
-  });
-
-  const chatButtons = Array.from(document.getElementById("button-chat").children);
-  chatButtons.forEach(chatButton => {    
-    chatButton.addEventListener("click", saveMessage);    
+/**************Text editor code*******************/
+//Asignacion de funciones de edicion a los botones del texteditor
+const textEditorHeader = document.querySelector('.text-editor-header');
+const buttonList = Array.from(textEditorHeader.querySelectorAll('.btn'));
+buttonList.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const command = btn.dataset['element'];
+    document.execCommand(command, false, null);
   })
+});
+
+// Evento para mostrar el Text editor
+const messageButton = document.getElementById('message-button');
+messageButton.addEventListener('click', () => {
+  messageButton.style.display = 'none';
+  const textEditorContent = document.getElementById('main-editor');  
+  textEditorContent.style.display = 'block';
+});
+
+// Funcion para cerrar el text editor
+const closeButton = document.getElementById('text-editor-close');
+closeButton.addEventListener('click', () => {
+  const messageButton = document.getElementById('message-button');
+  messageButton.style.display = 'block';
+  const textEditorContent = document.getElementById('main-editor');  
+  textEditorContent.style.display = 'none';
+});
+
+  
+ //Funcion para agregar un nuevo mensaje al chat
+  const buttonChatEditor = document.getElementById('button-chat-editor');
+  buttonChatEditor.addEventListener('click', saveMessage);
+  
   function saveMessage(event) {
     const user = {
       avatar: "/assets/images/avatar1.jpg",
       name: "Erika"
     }
-    const messageInput = document.getElementById("message-input");
+    const messageInput = document.getElementById('text-editor-content');
     const chatMessages = JSON.parse(localStorage.getItem("chat"));
     const chatMessagesArray = Array.from(chatMessages);
     /*Post agregar funcion httpRequest Post*/    
@@ -38,7 +48,7 @@
       id: chatMessagesArray.length + 1,
       userName: user.name,
       avatar: user.avatar,
-      message: messageInput.value,
+      message: messageInput.innerHTML,
       stars: 0,
       days: 0,
       type: (event.target.getAttribute("data-target") === 'aportes' ? 'A' : 'P'),
@@ -90,7 +100,7 @@
     divUserContainer.appendChild(divUserName);
     divUserContainer.appendChild(divSince);
 
-    // Append chld to userheader
+    // Append child to userheader
     divUserHeader.appendChild(divAvatarContainer);
     divUserHeader.appendChild(divUserContainer);
 
@@ -119,7 +129,7 @@
 
     const divUserBodyMessage = document.createElement("div");
     divUserBodyMessage.className = "user-body-message";
-    divUserBodyMessage.textContent = messageInput.value;
+    divUserBodyMessage.innerHTML = messageInput.innerHTML;
 
     divUserBody.appendChild(divStarsContainer);
     divUserBody.appendChild(divUserBodyMessage);
@@ -133,20 +143,29 @@
     divMChatBox.appendChild(divUserHeaderClon);
     divMChatBox.appendChild(divUserBodyClon);
 
-    if (event.target.getAttribute("data-target") === 'preguntas') {      
+    /*los inputs del radio button Seleccion aportes o preguntas*/
+    const textEditorFooter = document.getElementById("text-editor-footer");
+
+    const inputs = Array.from(textEditorFooter.querySelectorAll('input[type="radio"]'));
+    /*se obtiene la respuesta*/
+    const answer = inputs.findIndex(input => input.checked === true);
+    
+    
+    if (answer === 1) {      
       divPreguntas.insertBefore(divChatBox, divPreguntas.firstChild);
       divMPreguntas.insertBefore(divMChatBox, divMPreguntas.firstChild);
     }
-    if (event.target.getAttribute("data-target") === 'aportes') {
+    if (answer === 0) {
       divAportes.insertBefore(divChatBox, divAportes.firstChild);
       divMAportes.insertBefore(divMChatBox, divMAportes.firstChild);
-    }
+    }    
 
-    messageInput.value = '';
-    const buttonContainer = document.getElementById('button-chat');
-    buttonContainer.style.display = 'none';
+    messageInput.innerHTML = '';
+    const closeButton = document.getElementById('text-editor-close');
+    closeButton.dispatchEvent(new Event("click"));    
   }
 
+  /********************Funciones de ordenación de los botones Ordenar por...*******************/
   const buttonsOrder = Array.from(document.querySelectorAll(".button-order"));
   buttonsOrder.forEach(buttonOrder => {
     const orderBy = Array.from(buttonOrder.children)
@@ -155,6 +174,7 @@
     orderBy[2].addEventListener("click", chatOrderSin);
   });
 
+  //Ordenar nuevos ascendente
   function chatOrderNuevos(event) {
     /*GET Reemplazar por httpRequest Get*/
     const chatMessages = JSON.parse(localStorage.getItem("chat"));
@@ -184,6 +204,7 @@
     divAportes.appendChild(chatsOrdered);
   }
 
+  //Ordenar por más votados ascendente
   function chatOrderVotados(event) {
     /*GET Reemplazar por httpRequest Get*/
     const chatMessages = JSON.parse(localStorage.getItem("chat"));
@@ -214,6 +235,7 @@
     divAportes.appendChild(chatsOrdered);
   }
 
+  // Ordenar primero los que no tienen respuesta ascendente
   function chatOrderSin(event) {
 
     /*GET Reemplazar por httpRequest Get*/
@@ -244,6 +266,7 @@
     divAportes.appendChild(chatsOrdered);
   }
 
+  // Agregar o quitar un voto
   function addVote(event) {
     let parentNode = event.target;
 
@@ -272,10 +295,11 @@
     //
   }
 
-  /*QUIZ: Función para iniciar examen*/
+  /*****************QUIZ: Función para iniciar examen******************************/
   const buttonTest = document.getElementById("enable-quiz");
   buttonTest.addEventListener("click", enableTest);
 
+  // Habilitar examen
   function enableTest() {
     const currentListStep = document.getElementById("stepper");
     const steps = currentListStep.querySelectorAll(".step");
@@ -295,7 +319,7 @@
   }
 
   /*QUIZ: siguiente pregunta*/
-  function next() {
+  function next(event) {
     /*Se obtiene el current step*/
     const currentListStep = document.getElementById("stepper");
     const steps = currentListStep.querySelectorAll(".step");
@@ -306,9 +330,9 @@
     //const lista = document.getElementById(currentStep.id + "-question-list");
     const lista = document.getElementById(currentStep.getAttribute('data-quiz'));
     const elementos = lista.querySelectorAll(".question");
-    const items = Array.from(elementos);
+    const items = Array.from(elementos);    
     const indexItem = items.findIndex(item => item.classList.contains("show"));
-    if (indexItem !== -1 && indexItem < items.length - 1) {
+    if (indexItem !== -1 && indexItem < items.length -1) {      
       /*si se lo encuentra y ademas no es el ultimo nodo...*/
       /*los inputs del radio button*/
       const inputs = Array.from(items[indexItem].querySelectorAll('input[type="radio"]'));
@@ -326,11 +350,19 @@
       /*el paso de pregunta*/
       items[indexItem].classList.remove("show");
       items[indexItem + 1].classList.add("show");
+      if (indexItem == items.length - 2) {
+        //si es el ultimo nodo
+        const btnNext = event.target;
+        const parent_btnNext  = btnNext.parentNode;
+        const btnEval = parent_btnNext.querySelector('.btn-eval');        
+        btnEval.classList.remove('hidden');        
+        btnNext.classList.add('hidden');      
+      }
     }
   }
 
   /*QUIZ: pregunta previa*/
-  function prev() {
+  function prev(event) {
     /*Se obtiene el current step*/
     const currentListStep = document.getElementById("stepper");
     const steps = currentListStep.querySelectorAll(".step");
@@ -346,6 +378,15 @@
     if (indexItem !== -1 && indexItem > 0) {
       items[indexItem].classList.remove("show");
       items[indexItem - 1].classList.add("show");
+      if (indexItem == items.length - 1) {
+        //si es el ultimo nodo
+        const btnPrev = event.target;
+        const parent_btnPrev  = btnPrev.parentNode;
+        const btnEval = parent_btnPrev.querySelector('.btn-eval');        
+        const btnNext = parent_btnPrev.querySelector('.btn-next');        
+        btnEval.classList.add('hidden');        
+        btnNext.classList.remove('hidden');      
+      }
     }
   }
 
@@ -434,8 +475,7 @@
   }
 
   /**/
-  /*SCRIPT PARA EL COMPORTAMIENTO DEL STEPPER*/
-  /*Asignacion del recurso para el iframe VIDEO*/
+  /*SCRIPT PARA EL COMPORTAMIENTO DEL STEPPER*/  
   function stepFunction(event) {        
     /*GET Reemplazar por httpRequest Get*/
     const answers = JSON.parse(localStorage.getItem("answers"));
@@ -462,7 +502,6 @@
       testButton.classList.remove('hidden');
     }
     
-    //const nodeIds = parentNode.id.split('-');
     const iframes = document.getElementById("videoFrames");
     Array.from(iframes.children).forEach(item =>  {
       if (item.id === parentNode.getAttribute('data-video')) {
@@ -477,7 +516,7 @@
     const lista3 = document.getElementById("mobile-stepper");      
     const elementos2 = lista2.querySelectorAll(".step");
     const elementos3 = lista3.querySelectorAll(".step");
-    //const iframe = document.getElementById("videoFrame");      
+    
     elementos2.forEach(function (otroElemento) {
       const node = document.getElementById(otroElemento.id + "-question-list");
       if (node) {
@@ -492,8 +531,7 @@
     // Asignación del video la iframe
     // iframe.src = node.src;
     const stepName = "step-" + node.id;      
-    const stepMName = "mstepps-" + node.id;
-    // const stepDiv = (parentNode.id);
+    const stepMName = "mstepps-" + node.id;    
 
     switch (parentNode.id) {
       case stepName:
@@ -529,6 +567,7 @@
     }      
   }
 
+  // Evento de cerrado del sidenav con click fuera del contenedor
   document.addEventListener('click', function(event) {
   const sidenav = document.getElementById("body-stepper");
   const target = event.target;

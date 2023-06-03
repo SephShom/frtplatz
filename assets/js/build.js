@@ -335,6 +335,7 @@ fetch('data/Curso.txt')
           divQuestion.appendChild(divOptions);
         } else {
           // Agrega la sección de evaluación
+          /*
           const buttonEvaluation = document.createElement("div");
           buttonEvaluation.className = "evaluation";
 
@@ -346,6 +347,7 @@ fetch('data/Curso.txt')
 
           buttonEvaluation.appendChild(buttonEval);
           divQuestion.appendChild(buttonEvaluation);
+          */
         }
         // Agrega el div de la pregunta al contenedor
         divQuestionList.appendChild(divQuestion);
@@ -360,14 +362,21 @@ fetch('data/Curso.txt')
       buttonPrev.textContent = "Previa";
       buttonPrev.onclick = prev;
 
-      const buttonNext = document.createElement("button");
+      const buttonNext = document.createElement("button");      
       buttonNext.type = "button";
-      buttonNext.className = "btn btn-outline-primary m-2";
+      buttonNext.className = "btn btn-outline-primary m-2 btn-next";
       buttonNext.textContent = "Siguiente";
       buttonNext.onclick = next;
 
+      const buttonEval = document.createElement("button");      
+      buttonEval.type = "button";
+      buttonEval.className = "btn btn-success m-2 btn-eval hidden";
+      buttonEval.textContent = "Evaluacion";
+      buttonEval.onclick = eval;
+
       buttonQuest.appendChild(buttonPrev);
       buttonQuest.appendChild(buttonNext);
+      buttonQuest.appendChild(buttonEval);
 
       divQuestionList.appendChild(buttonQuest);
       statements.appendChild(divQuestionList);
@@ -379,7 +388,8 @@ fetch('data/Curso.txt')
       videoFrames.appendChild(iframe);
     });
 
-    const isPresentacion = steps.findIndex(step => step.role === 'presentacion' && step.active === true);
+    // Se oculta el boton de iniciar examen si el role de la leccion es presentacion
+    const isPresentacion = steps.findIndex(step => step.role === 'presentacion' && step.active === true);    
     if (isPresentacion !== -1) {
       testButton.classList.add('hidden');
     }

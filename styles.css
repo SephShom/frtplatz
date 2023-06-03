@@ -237,17 +237,20 @@ body {
 }
 
 /*Message input*/
+/*
 .button-chat {
   width: 95%;  
   display: none;
   justify-content: center;
 }
+*/
+
 .input-container {
   border-radius: 15px;
   background-color: var(--background-container-rgb);
   color: var(--border-color);
   width: 95%;
-  height: 75px;  
+  min-height: 75px;  
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -259,8 +262,8 @@ body {
 
 .input {
   background-color: var(--background-input);
-  width: 95%;
-  height: 82%;  
+  width: 100%;
+  height: 61.5px;  
   padding: 10px 10px 10px 10px;  
   border-radius: 5px;
   font-size: 80%;
@@ -269,6 +272,56 @@ body {
   border-width: 0.5px;
   color: var(--foreground-rgb);
 }
+
+.input-button {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  text-align: start;
+}
+
+/*Text editor*/
+.btn.custom {
+  color: var(--foreground-rgb);
+  background-color: var(--background-container-rgb);
+}
+
+.main-editor {
+  display: none;
+}
+
+[contenteditable]:focus {
+  padding: 0.5rem;
+  outline: 1px solid var(--border-color);;  
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+.main-editor .text-editor-header {
+  display: flex;  
+}
+
+.main-editor .text-editor-content {
+  height: 8rem;
+  overflow-y: auto; 
+}
+
+.main-editor .text-editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+}
+
+.btn.custom:hover {
+  filter: brightness(1.5);
+}
+
+.btn-close {
+  font-size: 70%;
+}
+/*Fin Text Editor*/
 
 .bi.bi-heart-fill.hidden {
   display: none;
@@ -634,6 +687,10 @@ body {
 .button-quest {
   display: flex;
   justify-content: center;  
+}
+
+.btn.hidden {
+  display: none;
 }
 
 
